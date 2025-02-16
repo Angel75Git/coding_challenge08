@@ -61,3 +61,18 @@ function filterLargeTransactions(transactions, filterFunction){
 // Function will spit out 1500, 3200, 2500
 let transactions = [200, 1500, 3200, 800, 2500];
 console.log(filterLargeTransactions(transactions, amount => amount > 1000));
+
+//Task 7
+//Closure Function
+function createCartTracker(){
+    let totalCart = 0
+    return function(item){
+        totalCart += item;
+        return `Total Cart Value: $${totalCart}`;
+    }
+} //Very similar to Coding Challenge 8 Solution
+
+let cart = createCartTracker();
+console.log(cart(20));
+console.log(cart(35));
+
